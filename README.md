@@ -31,7 +31,13 @@ git clone <repository-url>
 cd instagram-like-app
 ```
 
-### 2. Local setup
+### 2. Run Docker compose
+
+```bash
+docker-compose up
+```
+
+### 3. Local setup
 
 ```bash
 
@@ -46,8 +52,13 @@ export FLASK_APP=instagram.py
 flask run
 ```
 
-### 3. Run Test Cases
+### 4. Run Test Cases
 
 ```bash
 pytest
 ```
+
+### 5. Swagger URL
+
+Swagger URl: http://127.0.0.1:5000/apidocs/
+
