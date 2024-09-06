@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Instagram-like Image Service
+  description: API documentation for image upload and management
+
+paths:
+  /upload:
+    post:
+      summary: Upload an image
+      parameters:
+        - in: formData
+          name: image
+          type: file
+          required: true
+        - in: formData
+          name: user_id
+          type: string
+          required: true
+        - in: formData
+          name: title
+          type: string
+          required: true
+        - in: formData
+          name: description
+          type: string
+          required: true
+      responses:
+        200:
+          description: Image uploaded successfully
+
+  /images:
+    get:
+      summary: List all images
+      parameters:
+        - in: query
+          name: user_id
+          type: string
+          description: Filter by user ID
+      responses:
+        200:
+          description: List of images
+
+  /image/{image_id}:
+    get:
+      summary: View or download an image
+      parameters:
+        - in: path
+          name: image_id
+          type: string
+          required: true
+      responses:
+        200:
+          description: URL of the image
+    
+    delete:
+      summary: Delete an image
+      parameters:
+        - in: path
+          name: image_id
+          type: string
+          required: true
+      responses:
+        200:
+          description: Image deleted successfully
